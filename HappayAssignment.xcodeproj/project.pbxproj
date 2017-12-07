@@ -13,6 +13,10 @@
 		9B58E9CA1FD905440076845F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B58E9C91FD905440076845F /* Assets.xcassets */; };
 		9B58E9CD1FD905440076845F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B58E9CB1FD905440076845F /* LaunchScreen.storyboard */; };
 		9B58E9D81FD905440076845F /* HappayAssignmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B58E9D71FD905440076845F /* HappayAssignmentTests.swift */; };
+		9B58E9E31FD9099F0076845F /* BikeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B58E9E21FD9099F0076845F /* BikeCell.swift */; };
+		9B58E9E51FD909B10076845F /* BikerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B58E9E41FD909B10076845F /* BikerTableViewController.swift */; };
+		9B58E9E71FD93DFB0076845F /* BikerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B58E9E61FD93DFB0076845F /* BikerModel.swift */; };
+		9B58E9E91FD9C9E50076845F /* HelperUIComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B58E9E81FD9C9E50076845F /* HelperUIComponent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +40,10 @@
 		9B58E9D31FD905440076845F /* HappayAssignmentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HappayAssignmentTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B58E9D71FD905440076845F /* HappayAssignmentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HappayAssignmentTests.swift; sourceTree = "<group>"; };
 		9B58E9D91FD905440076845F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9B58E9E21FD9099F0076845F /* BikeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeCell.swift; sourceTree = "<group>"; };
+		9B58E9E41FD909B10076845F /* BikerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikerTableViewController.swift; sourceTree = "<group>"; };
+		9B58E9E61FD93DFB0076845F /* BikerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikerModel.swift; sourceTree = "<group>"; };
+		9B58E9E81FD9C9E50076845F /* HelperUIComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperUIComponent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +91,10 @@
 				9B58E9C91FD905440076845F /* Assets.xcassets */,
 				9B58E9CB1FD905440076845F /* LaunchScreen.storyboard */,
 				9B58E9CE1FD905440076845F /* Info.plist */,
+				9B58E9E21FD9099F0076845F /* BikeCell.swift */,
+				9B58E9E41FD909B10076845F /* BikerTableViewController.swift */,
+				9B58E9E61FD93DFB0076845F /* BikerModel.swift */,
+				9B58E9E81FD9C9E50076845F /* HelperUIComponent.swift */,
 			);
 			path = HappayAssignment;
 			sourceTree = "<group>";
@@ -199,7 +211,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B58E9E71FD93DFB0076845F /* BikerModel.swift in Sources */,
 				9B58E9C51FD905440076845F /* ViewController.swift in Sources */,
+				9B58E9E51FD909B10076845F /* BikerTableViewController.swift in Sources */,
+				9B58E9E91FD9C9E50076845F /* HelperUIComponent.swift in Sources */,
+				9B58E9E31FD9099F0076845F /* BikeCell.swift in Sources */,
 				9B58E9C31FD905440076845F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -354,6 +370,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V9ECRET98Q;
 				INFOPLIST_FILE = HappayAssignment/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = theiOSDeveloper.HappayAssignment;
@@ -368,6 +385,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V9ECRET98Q;
 				INFOPLIST_FILE = HappayAssignment/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = theiOSDeveloper.HappayAssignment;
