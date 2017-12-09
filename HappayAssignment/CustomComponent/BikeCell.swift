@@ -11,6 +11,8 @@ import UIKit
 class BikeCell: UITableViewCell {
 
     @IBOutlet weak var name_Lbl: UILabel!
+    @IBOutlet weak var backView: UIView!
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

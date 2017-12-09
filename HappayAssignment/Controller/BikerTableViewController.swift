@@ -10,30 +10,55 @@ import UIKit
 class BikerTableViewController: UITableViewController,UISearchBarDelegate {
     @IBOutlet weak var searchbar: UISearchBar!
     var table_Data = [BikerModel]()
-    var netowrk = [Networks]()
+    var network = [Networks]()
     var filtered_Data = [Networks]()
     var searchActive : Bool = false
+    var data:Location?
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.backgroundColor = UIColor.black
         searchbar.placeholder = "Search here..."
         self.tableView.rowHeight = 80
         self.searchbar.delegate = self
+        tableView.backgroundView = UIImageView(image: UIImage(named: "Image"))
 
         downloadJSON()
-    }
+//        DataManager.getJSONFromURL("network") { (data, error) in
+//                guard let data = data else { return
+////                    PlaygroundPage.current.finishExecution()
+//                }
+//                let decoder = JSONDecoder()
+//                do {
+//                    let car = try decoder.decode(BikerModel.self, from: data)
+//                    print(car)
+////                    PlaygroundPage.current.finishExecution()
+//                } catch let e {
+//                    print("failed to convert data \(e)")
+////                    PlaygroundPage.current.finishExecution()
+//                }
+//            }
+        }
     func downloadJSON(){
        let jsonUrl = "https://api.citybik.es/v2/networks"
         let url = URL(string:jsonUrl)
         URLSession.shared.dataTask(with: url!) { (data, response, error) in
             do{
+                if data == nil{
+                    print("Data nil")
+//                    self.tableView.tableHeaderView.
+                    return
+                }
                 let json = try JSONDecoder().decode(BikerModel.self, from: data!)
                 self.table_Data = [json]
+                print("self:\(self.table_Data)")
                 for i in self.table_Data{
-                    self.netowrk = i.networks
+                    self.network = i.networks
                 }
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
+                    print("count:\(self.network.count)")
+                    for i in self.network{
+//                        print("i:\(i.company)")
+                    }
                 }
             }catch{
                 print(error)
@@ -41,7 +66,19 @@ class BikerTableViewController: UITableViewController,UISearchBarDelegate {
         }.resume()
     }
     // MARK: - Table view data source
-
+//    public final class DataManager {
+//        public static func getJSONFromURL(_ resource:String, completion:@escaping (_ data:Data?, _ error:Error?) -> Void) {
+//            DispatchQueue.global(qos: .background).async {
+////                let filePath = Bundle.main.path(forResource: resource, ofType: ".json")
+//                let path =  Bundle.main.path(forResource: "network", ofType: "json")
+//
+//                print("file:\(String(describing: path))")
+//                let url = URL(fileURLWithPath:path!)
+//                let data = try! Data(contentsOf: url, options: .uncached)
+//                completion(data, nil)
+//            }
+//        }
+//    }
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
@@ -52,29 +89,43 @@ class BikerTableViewController: UITableViewController,UISearchBarDelegate {
         if searchActive == true {
             return filtered_Data.count
         }else{
-            return netowrk.count
+            return network.count
         }
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! BikeCell
-        let data = netowrk[indexPath.row]
+        let data = network[indexPath.row]
+        cell.backView.layer.cornerRadius = 10
+        cell.backView.layer.masksToBounds = true
         if searchActive ==  true{
             if filtered_Data.count == 0{
                 return cell
-            }
+            }else{
             let fdata = filtered_Data[indexPath.row]
-            cell.name_Lbl.text = fdata.name
-//            cell.population_Lbl.text = fdata.population
-//            cell.name_Lbl.font = font
+                cell.name_Lbl.text = fdata.name
+            }
         }else{
-//            cell.name_Lbl.text = kdata.name
-            cell.name_Lbl.text = data.id
-            
+            cell.name_Lbl?.text = data.name
         }
         return cell
     }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        DispatchQueue.main.async() {
+            [unowned self] in
+            self.data = self.network[indexPath.row].location
+            self.performSegue(withIdentifier: "MapData", sender:self)
+        }
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "MapData"{
+            var vc = segue.destination as! MapViewController
+            vc.data = self.data
+        }
+    }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -140,7 +191,7 @@ extension  BikerTableViewController{
         searchActive = false
     }
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        filtered_Data = netowrk.filter({ (model:Networks) -> Bool in
+        filtered_Data = network.filter({ (model:Networks) -> Bool in
             return model.name.lowercased().range(of:searchText.lowercased()) != nil
         })
         if searchText != ""{

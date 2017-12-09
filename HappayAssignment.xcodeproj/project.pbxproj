@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9B02A2D71FDBFF8F009B86D3 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B02A2D61FDBFF8F009B86D3 /* MapViewController.swift */; };
 		9B58E9C31FD905440076845F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B58E9C21FD905440076845F /* AppDelegate.swift */; };
-		9B58E9C51FD905440076845F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B58E9C41FD905440076845F /* ViewController.swift */; };
 		9B58E9C81FD905440076845F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B58E9C61FD905440076845F /* Main.storyboard */; };
 		9B58E9CA1FD905440076845F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B58E9C91FD905440076845F /* Assets.xcassets */; };
 		9B58E9CD1FD905440076845F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B58E9CB1FD905440076845F /* LaunchScreen.storyboard */; };
@@ -16,7 +16,6 @@
 		9B58E9E31FD9099F0076845F /* BikeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B58E9E21FD9099F0076845F /* BikeCell.swift */; };
 		9B58E9E51FD909B10076845F /* BikerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B58E9E41FD909B10076845F /* BikerTableViewController.swift */; };
 		9B58E9E71FD93DFB0076845F /* BikerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B58E9E61FD93DFB0076845F /* BikerModel.swift */; };
-		9B58E9E91FD9C9E50076845F /* HelperUIComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B58E9E81FD9C9E50076845F /* HelperUIComponent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,9 +29,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9B02A2D51FDBEA94009B86D3 /* network.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = network.json; sourceTree = "<group>"; };
+		9B02A2D61FDBFF8F009B86D3 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		9B58E9BF1FD905440076845F /* HappayAssignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HappayAssignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B58E9C21FD905440076845F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9B58E9C41FD905440076845F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9B58E9C71FD905440076845F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9B58E9C91FD905440076845F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9B58E9CC1FD905440076845F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -43,7 +43,6 @@
 		9B58E9E21FD9099F0076845F /* BikeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeCell.swift; sourceTree = "<group>"; };
 		9B58E9E41FD909B10076845F /* BikerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikerTableViewController.swift; sourceTree = "<group>"; };
 		9B58E9E61FD93DFB0076845F /* BikerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikerModel.swift; sourceTree = "<group>"; };
-		9B58E9E81FD9C9E50076845F /* HelperUIComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperUIComponent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +63,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9B02A2D11FDA500F009B86D3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9B02A2D51FDBEA94009B86D3 /* network.json */,
+				9B58E9E61FD93DFB0076845F /* BikerModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9B02A2D21FDA5019009B86D3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9B58E9C61FD905440076845F /* Main.storyboard */,
+				9B58E9CB1FD905440076845F /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9B02A2D31FDA501F009B86D3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9B58E9E41FD909B10076845F /* BikerTableViewController.swift */,
+				9B02A2D61FDBFF8F009B86D3 /* MapViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		9B02A2D41FDA5042009B86D3 /* CustomComponent */ = {
+			isa = PBXGroup;
+			children = (
+				9B58E9E21FD9099F0076845F /* BikeCell.swift */,
+			);
+			path = CustomComponent;
+			sourceTree = "<group>";
+		};
 		9B58E9B61FD905440076845F = {
 			isa = PBXGroup;
 			children = (
@@ -85,16 +119,13 @@
 		9B58E9C11FD905440076845F /* HappayAssignment */ = {
 			isa = PBXGroup;
 			children = (
+				9B02A2D41FDA5042009B86D3 /* CustomComponent */,
+				9B02A2D31FDA501F009B86D3 /* Controller */,
+				9B02A2D21FDA5019009B86D3 /* View */,
+				9B02A2D11FDA500F009B86D3 /* Model */,
 				9B58E9C21FD905440076845F /* AppDelegate.swift */,
-				9B58E9C41FD905440076845F /* ViewController.swift */,
-				9B58E9C61FD905440076845F /* Main.storyboard */,
 				9B58E9C91FD905440076845F /* Assets.xcassets */,
-				9B58E9CB1FD905440076845F /* LaunchScreen.storyboard */,
 				9B58E9CE1FD905440076845F /* Info.plist */,
-				9B58E9E21FD9099F0076845F /* BikeCell.swift */,
-				9B58E9E41FD909B10076845F /* BikerTableViewController.swift */,
-				9B58E9E61FD93DFB0076845F /* BikerModel.swift */,
-				9B58E9E81FD9C9E50076845F /* HelperUIComponent.swift */,
 			);
 			path = HappayAssignment;
 			sourceTree = "<group>";
@@ -212,10 +243,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B58E9E71FD93DFB0076845F /* BikerModel.swift in Sources */,
-				9B58E9C51FD905440076845F /* ViewController.swift in Sources */,
 				9B58E9E51FD909B10076845F /* BikerTableViewController.swift in Sources */,
-				9B58E9E91FD9C9E50076845F /* HelperUIComponent.swift in Sources */,
 				9B58E9E31FD9099F0076845F /* BikeCell.swift in Sources */,
+				9B02A2D71FDBFF8F009B86D3 /* MapViewController.swift in Sources */,
 				9B58E9C31FD905440076845F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

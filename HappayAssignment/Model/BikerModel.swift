@@ -15,6 +15,7 @@ struct Networks:Decodable {
     let id:String
     let href:String
     let location:Location
+    let company:[String] = []
 }
 
 struct Location:Decodable {
