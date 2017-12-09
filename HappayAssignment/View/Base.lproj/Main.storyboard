@@ -21,13 +21,13 @@
                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                         </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Cell" rowHeight="80" id="rYq-iv-TY2" customClass="BikeCell" customModule="HappayAssignment" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="72" width="375" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rYq-iv-TY2" id="IhK-ZO-lGs" customClass="HelperUIComponent" customModule="HappayAssignment" customModuleProvider="target">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rYq-iv-TY2" id="IhK-ZO-lGs">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
@@ -44,6 +44,7 @@
                                             <color key="backgroundColor" red="0.11406298726797104" green="0.31997591257095337" blue="0.66076838970184326" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstItem="Hh0-6f-fm8" firstAttribute="leading" secondItem="DAy-5k-gyt" secondAttribute="leading" constant="8" id="9Eq-Tr-0hi"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Hh0-6f-fm8" secondAttribute="trailing" constant="20" symbolic="YES" id="qBC-Ps-Kjd"/>
                                                 <constraint firstItem="Hh0-6f-fm8" firstAttribute="top" secondItem="DAy-5k-gyt" secondAttribute="top" constant="22" id="zOc-b5-ZBx"/>
                                             </constraints>
                                         </view>
@@ -54,23 +55,6 @@
                                         <constraint firstItem="DAy-5k-gyt" firstAttribute="leading" secondItem="IhK-ZO-lGs" secondAttribute="leading" constant="8" id="NPQ-Zr-Jyg"/>
                                         <constraint firstItem="DAy-5k-gyt" firstAttribute="top" secondItem="IhK-ZO-lGs" secondAttribute="top" constant="8" id="qXY-g8-dcs"/>
                                     </constraints>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                            <real key="value" value="100"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                            <real key="value" value="3"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                            <color key="value" red="0.074509803920000006" green="0.30980392159999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                                            <real key="value" value="1"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                            <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                        </userDefinedRuntimeAttribute>
-                                    </userDefinedRuntimeAttributes>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>

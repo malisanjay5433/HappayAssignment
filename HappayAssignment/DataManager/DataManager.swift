@@ -16,12 +16,13 @@ public final class DataManager {
                         print("Data nil")
                         return
                     }
+                    guard let data = data else { return
+                    }
                     completion(data,nil)
                 }catch{
                     print(error)
                 }
-                
-             }.resume()
+                }.resume()
         }
     }
 }

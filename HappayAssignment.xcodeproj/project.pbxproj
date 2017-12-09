@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9B02A2D71FDBFF8F009B86D3 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B02A2D61FDBFF8F009B86D3 /* MapViewController.swift */; };
+		9B4ED3201FDC14A600C91A95 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4ED31F1FDC14A600C91A95 /* DataManager.swift */; };
 		9B58E9C31FD905440076845F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B58E9C21FD905440076845F /* AppDelegate.swift */; };
 		9B58E9C81FD905440076845F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B58E9C61FD905440076845F /* Main.storyboard */; };
 		9B58E9CA1FD905440076845F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B58E9C91FD905440076845F /* Assets.xcassets */; };
@@ -31,6 +32,7 @@
 /* Begin PBXFileReference section */
 		9B02A2D51FDBEA94009B86D3 /* network.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = network.json; sourceTree = "<group>"; };
 		9B02A2D61FDBFF8F009B86D3 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		9B4ED31F1FDC14A600C91A95 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		9B58E9BF1FD905440076845F /* HappayAssignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HappayAssignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B58E9C21FD905440076845F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9B58E9C71FD905440076845F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -90,12 +92,20 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		9B02A2D41FDA5042009B86D3 /* CustomComponent */ = {
+		9B02A2D41FDA5042009B86D3 /* CustomCell */ = {
 			isa = PBXGroup;
 			children = (
 				9B58E9E21FD9099F0076845F /* BikeCell.swift */,
 			);
-			path = CustomComponent;
+			path = CustomCell;
+			sourceTree = "<group>";
+		};
+		9B4ED3211FDC1A0900C91A95 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				9B4ED31F1FDC14A600C91A95 /* DataManager.swift */,
+			);
+			path = DataManager;
 			sourceTree = "<group>";
 		};
 		9B58E9B61FD905440076845F = {
@@ -119,7 +129,8 @@
 		9B58E9C11FD905440076845F /* HappayAssignment */ = {
 			isa = PBXGroup;
 			children = (
-				9B02A2D41FDA5042009B86D3 /* CustomComponent */,
+				9B4ED3211FDC1A0900C91A95 /* DataManager */,
+				9B02A2D41FDA5042009B86D3 /* CustomCell */,
 				9B02A2D31FDA501F009B86D3 /* Controller */,
 				9B02A2D21FDA5019009B86D3 /* View */,
 				9B02A2D11FDA500F009B86D3 /* Model */,
@@ -243,6 +254,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B58E9E71FD93DFB0076845F /* BikerModel.swift in Sources */,
+				9B4ED3201FDC14A600C91A95 /* DataManager.swift in Sources */,
 				9B58E9E51FD909B10076845F /* BikerTableViewController.swift in Sources */,
 				9B58E9E31FD9099F0076845F /* BikeCell.swift in Sources */,
 				9B02A2D71FDBFF8F009B86D3 /* MapViewController.swift in Sources */,
