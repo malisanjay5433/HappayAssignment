@@ -14,7 +14,7 @@ class BikerTableViewController: UITableViewController,UISearchBarDelegate {
     var filtered_Data = [Networks]()
     var searchActive : Bool = false
     var data:Location?
-    let jsonUrl = "https://api.citybik.es/v2/networks"
+    var id:String?
     override func viewDidLoad() {
         super.viewDidLoad()
         searchbar.placeholder = "Search here..."
@@ -25,6 +25,7 @@ class BikerTableViewController: UITableViewController,UISearchBarDelegate {
         downloadJSON()
     }
     func downloadJSON(){
+        let jsonUrl = "https://api.citybik.es/v2/networks"
         DataManager.getJSONFromURL(jsonUrl) { (data, error) in
             guard let data = data else { return
             }
@@ -49,7 +50,6 @@ class BikerTableViewController: UITableViewController,UISearchBarDelegate {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
-    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         if searchActive == true {
@@ -58,7 +58,6 @@ class BikerTableViewController: UITableViewController,UISearchBarDelegate {
             return network.count
         }
     }
-    
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! BikeCell
@@ -88,14 +87,15 @@ class BikerTableViewController: UITableViewController,UISearchBarDelegate {
         DispatchQueue.main.async() {
             [unowned self] in
             self.data = self.network[indexPath.row].location
+            self.id = self.network[indexPath.row].id
             self.performSegue(withIdentifier: "MapData", sender:self)
         }
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
         if segue.identifier == "MapData"{
             let vc = segue.destination as! MapViewController
             vc.data = self.data
+            vc.id = self.id
         }
     }
 }
@@ -117,7 +117,7 @@ extension  BikerTableViewController{
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchActive = false
         searchBar.resignFirstResponder() // hides the keyboard.
-
+        
     }
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         filtered_Data = network.filter({ (model:Networks) -> Bool in

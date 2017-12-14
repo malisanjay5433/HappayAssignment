@@ -15,14 +15,21 @@ struct Networks:Decodable {
     let id:String
     let href:String
     let location:Location
-    let company:[String] = []
+//    let stations:[Stations]
 }
-
 struct Location:Decodable {
     let latitude:Double
     let longitude:Double
     let country:String
     let city:String
 }
+struct Stations:Decodable {
+    let free_bikes:String?
+    let name:String?
+    let timestamp:String?
+    let latitude:Double?
+    let longitude:Double?
+}
+
 
 //
