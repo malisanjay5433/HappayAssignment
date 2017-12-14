@@ -39,12 +39,11 @@ extension MapViewController: MKMapViewDelegate {
         let date = dateFormatter.date(from: date)
         dateFormatter.dateFormat = "yyyy MMM EEEE"
         dateFormatter.timeZone = NSTimeZone(name: "UTC") as TimeZone!
-        let timeStamp = dateFormatter.string(from: date!)
-        if timeStamp != nil {
-        return timeStamp
-        }else{
-            return ""
+        if date == nil{
+            return "---"
         }
+        let timeStamp = dateFormatter.string(from: date!)
+        return timeStamp
     }
     //Annoataion is  display on map
     func plotonMap(){
